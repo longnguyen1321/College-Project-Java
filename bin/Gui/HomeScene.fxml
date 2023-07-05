@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox prefHeight="139.0" prefWidth="600.0" GridPane.rowIndex="1">
+         <children>
+            <GridPane prefHeight="198.0" prefWidth="884.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="105.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="374.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="216.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="187.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Tên máy" GridPane.rowIndex="1" />
+                  <Label text="Tồn kho" GridPane.rowIndex="5" />
+                  <Label text="Hãng máy" GridPane.rowIndex="2" />
+                  <TextField fx:id="consoleInStockTF" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="consoleBrandTF" prefHeight="25.0" prefWidth="266.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="consoleNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#onClickUpdate" prefWidth="80.0" text="Update" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onClickDelete" prefWidth="80.0" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onClickAdd" prefWidth="80.0" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="actionMessage" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Gía" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="consolePriceTF" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Tình trạng" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="consoleStatusTF" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Mã ID" />
+                  <TextField fx:id="consoleIdTF" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <TableView fx:id="table" onMouseClicked="#onClickRow" prefHeight="219.0" prefWidth="863.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="150.0" text="Id" />
+          <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Tên máy" />
+            <TableColumn fx:id="brandColumn" prefWidth="150.0" text="Hãng" />
+            <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Trạng thái" />
+            <TableColumn fx:id="inStockColumn" minWidth="-1.0" prefWidth="120.0" text="Tồn kho" />
+            <TableColumn fx:id="priceColumn" prefWidth="120.0" text="Gía" />
+        </columns>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
